@@ -1,0 +1,7 @@
+build/
+datas/images/
+datas/models/*.onnx
+datas/models/*.wts
+datas/models/*.engine
+datas/models/*.pt
+datas/models/*.idea

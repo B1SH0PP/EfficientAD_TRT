@@ -1,0 +1,415 @@
+PS E:\0_PROJECTS\C++_VisualStudio\TensorRT\efficient_ad-240410\build\Debug> ."E:/0_PROJECTS/C++_VisualStudio/TensorRT/efficient_ad-240410/build/Debug/efficientAD_det.exe" -s ../../datas/models/ead_hazelnut_ep300.wts ../../datas/models/ead_hazelnut_ep300.engine l
+[04/18/2024-15:43:10] [W] [TRT] The implicit batch dimension mode has been deprecated. Please create the network with NetworkDefinitionCreationFlag::kEXPLICIT_BATCH flag whenever possible.
+Loading weights: ../../datas/models/ead_hazelnut_ep300.wts
+--- Layer0 = ae.encoder.enconv1
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (3, 256, 256)
+output shape: (32, 128, 128)
+
+--- Layer1 = (Unnamed Layer* 1) [Activation]  
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (32, 128, 128)
+output shape: (32, 128, 128)
+
+--- Layer2 = ae.encoder.enconv2
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (32, 128, 128)
+output shape: (32, 64, 64)
+
+--- Layer3 = (Unnamed Layer* 3) [Activation]  
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (32, 64, 64)
+output shape: (32, 64, 64)
+
+--- Layer4 = ae.encoder.enconv3
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (32, 64, 64)
+output shape: (64, 32, 32)
+
+--- Layer5 = (Unnamed Layer* 5) [Activation]  
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (64, 32, 32)
+output shape: (64, 32, 32)
+
+--- Layer6 = ae.encoder.enconv4
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (64, 32, 32)
+output shape: (64, 16, 16)
+
+--- Layer7 = (Unnamed Layer* 7) [Activation]  
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (64, 16, 16)
+output shape: (64, 16, 16)
+
+--- Layer8 = ae.encoder.enconv5
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (64, 16, 16)
+output shape: (64, 8, 8)
+
+--- Layer9 = (Unnamed Layer* 9) [Activation]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (64, 8, 8)
+output shape: (64, 8, 8)
+
+--- Layer10 = ae.encoder.enconv6
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (64, 8, 8)
+output shape: (64, 1, 1)
+
+--- Layer11 = (Unnamed Layer* 11) [Resize]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (64, 1, 1)
+output shape: (64, 3, 3)
+
+--- Layer12 = ae.decoder.deconv1.conv
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (64, 3, 3)
+output shape: (64, 4, 4)
+
+--- Layer13 = (Unnamed Layer* 13) [Activation]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (64, 4, 4)
+output shape: (64, 4, 4)
+
+--- Layer14 = (Unnamed Layer* 14) [Resize]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (64, 4, 4)
+output shape: (64, 8, 8)
+
+--- Layer15 = ae.decoder.deconv2.conv
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (64, 8, 8)
+output shape: (64, 9, 9)
+
+--- Layer16 = (Unnamed Layer* 16) [Activation]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (64, 9, 9)
+output shape: (64, 9, 9)
+
+--- Layer17 = (Unnamed Layer* 17) [Resize]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (64, 9, 9)
+output shape: (64, 15, 15)
+
+--- Layer18 = ae.decoder.deconv3.conv
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (64, 15, 15)
+output shape: (64, 16, 16)
+
+--- Layer19 = (Unnamed Layer* 19) [Activation]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (64, 16, 16)
+output shape: (64, 16, 16)
+
+--- Layer20 = (Unnamed Layer* 20) [Resize]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (64, 16, 16)
+output shape: (64, 32, 32)
+
+--- Layer21 = ae.decoder.deconv4.conv
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (64, 32, 32)
+output shape: (64, 33, 33)
+
+--- Layer22 = (Unnamed Layer* 22) [Activation]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (64, 33, 33)
+output shape: (64, 33, 33)
+
+--- Layer23 = (Unnamed Layer* 23) [Resize]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (64, 33, 33)
+output shape: (64, 63, 63)
+
+--- Layer24 = ae.decoder.deconv5.conv
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (64, 63, 63)
+output shape: (64, 64, 64)
+
+--- Layer25 = (Unnamed Layer* 25) [Activation]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (64, 64, 64)
+output shape: (64, 64, 64)
+
+--- Layer26 = (Unnamed Layer* 26) [Resize]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (64, 64, 64)
+output shape: (64, 127, 127)
+
+--- Layer27 = ae.decoder.deconv6.conv
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (64, 127, 127)
+output shape: (64, 128, 128)
+
+--- Layer28 = (Unnamed Layer* 28) [Activation]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (64, 128, 128)
+output shape: (64, 128, 128)
+
+--- Layer29 = (Unnamed Layer* 29) [Resize]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (64, 128, 128)
+output shape: (64, 56, 56)
+
+--- Layer30 = ae.decoder.deconv7.conv
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (64, 56, 56)
+output shape: (64, 56, 56)
+
+--- Layer31 = (Unnamed Layer* 31) [Activation]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (64, 56, 56)
+output shape: (64, 56, 56)
+
+--- Layer32 = ae.decoder.deconv8
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (64, 56, 56)
+output shape: (384, 56, 56)
+
+--- Layer33 = teacher.conv1
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (3, 256, 256)
+output shape: (256, 253, 253)
+
+--- Layer34 = (Unnamed Layer* 34) [Activation]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (256, 253, 253)
+output shape: (256, 253, 253)
+
+--- Layer35 = (Unnamed Layer* 35) [Pooling]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (256, 253, 253)
+output shape: (256, 126, 126)
+
+--- Layer36 = teacher.conv2
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (256, 126, 126)
+output shape: (512, 123, 123)
+
+--- Layer37 = (Unnamed Layer* 37) [Activation]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (512, 123, 123)
+output shape: (512, 123, 123)
+
+--- Layer38 = (Unnamed Layer* 38) [Pooling]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (512, 123, 123)
+output shape: (512, 61, 61)
+
+--- Layer39 = teacher.conv3
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (512, 61, 61)
+output shape: (512, 61, 61)
+
+--- Layer40 = (Unnamed Layer* 40) [Activation]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (512, 61, 61)
+output shape: (512, 61, 61)
+
+--- Layer41 = teacher.conv4
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (512, 61, 61)
+output shape: (512, 59, 59)
+
+--- Layer42 = (Unnamed Layer* 42) [Activation]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (512, 59, 59)
+output shape: (512, 59, 59)
+
+--- Layer43 = teacher.conv5
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (512, 59, 59)
+output shape: (384, 56, 56)
+
+--- Layer44 = (Unnamed Layer* 44) [Activation]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (384, 56, 56)
+output shape: (384, 56, 56)
+
+--- Layer45 = teacher.conv6
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (384, 56, 56)
+output shape: (384, 56, 56)
+
+--- Layer46 = student.conv1
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (3, 256, 256)
+output shape: (256, 253, 253)
+
+--- Layer47 = (Unnamed Layer* 47) [Activation]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (256, 253, 253)
+output shape: (256, 253, 253)
+
+--- Layer48 = (Unnamed Layer* 48) [Pooling]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (256, 253, 253)
+output shape: (256, 126, 126)
+
+--- Layer49 = student.conv2
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (256, 126, 126)
+output shape: (512, 123, 123)
+
+--- Layer50 = (Unnamed Layer* 50) [Activation]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (512, 123, 123)
+output shape: (512, 123, 123)
+
+--- Layer51 = (Unnamed Layer* 51) [Pooling]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (512, 123, 123)
+output shape: (512, 61, 61)
+
+--- Layer52 = student.conv3
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (512, 61, 61)
+output shape: (512, 61, 61)
+
+--- Layer53 = (Unnamed Layer* 53) [Activation]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (512, 61, 61)
+output shape: (512, 61, 61)
+
+--- Layer54 = student.conv4
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (512, 61, 61)
+output shape: (512, 59, 59)
+
+--- Layer55 = (Unnamed Layer* 55) [Activation]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (512, 59, 59)
+output shape: (512, 59, 59)
+
+--- Layer56 = student.conv5
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (512, 59, 59)
+output shape: (768, 56, 56)
+
+--- Layer57 = (Unnamed Layer* 57) [Activation]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (768, 56, 56)
+output shape: (768, 56, 56)
+
+--- Layer58 = student.conv6
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (768, 56, 56)
+output shape: (768, 56, 56)
+
+--- Layer59 = (Unnamed Layer* 59) [Scale]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (384, 56, 56)
+output shape: (384, 56, 56)
+
+--- Layer60 = (Unnamed Layer* 60) [Scale]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (384, 56, 56)
+output shape: (384, 56, 56)
+
+--- Layer61 = (Unnamed Layer* 61) [Slice]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (768, 56, 56)
+output shape: (384, 56, 56)
+
+--- Layer62 = (Unnamed Layer* 62) [Slice]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (768, 56, 56)
+output shape: (384, 56, 56)
+
+--- Layer63 = (Unnamed Layer* 63) [ElementWise]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (384, 56, 56)   input shape[1]: (384, 56, 56)
+output shape: (384, 56, 56)
+
+--- Layer64 = (Unnamed Layer* 64) [ElementWise]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (384, 56, 56)   input shape[1]: (384, 56, 56)
+output shape: (384, 56, 56)
+
+--- Layer65 = (Unnamed Layer* 65) [ElementWise]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (384, 56, 56)   input shape[1]: (384, 56, 56)
+output shape: (384, 56, 56)
+
+--- Layer66 = (Unnamed Layer* 66) [ElementWise]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (384, 56, 56)   input shape[1]: (384, 56, 56)
+output shape: (384, 56, 56)
+
+--- Layer67 = (Unnamed Layer* 67) [Reduce]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (384, 56, 56)
+output shape: (1, 56, 56)
+
+--- Layer68 = (Unnamed Layer* 68) [Reduce]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (384, 56, 56)
+output shape: (1, 56, 56)
+
+--- Layer69 = (Unnamed Layer* 69) [Padding]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (1, 56, 56)
+output shape: (1, 64, 64)
+
+--- Layer70 = (Unnamed Layer* 70) [Padding]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (1, 56, 56)
+output shape: (1, 64, 64)
+
+--- Layer71 = (Unnamed Layer* 71) [Resize]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (1, 64, 64)
+output shape: (1, 256, 256)
+
+--- Layer72 = (Unnamed Layer* 72) [Resize]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (1, 64, 64)
+output shape: (1, 256, 256)
+
+--- Layer73 = (Unnamed Layer* 73) [Scale]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (1, 256, 256)
+output shape: (1, 256, 256)
+
+--- Layer74 = (Unnamed Layer* 74) [Scale]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (1, 256, 256)
+output shape: (1, 256, 256)
+
+--- Layer75 = (Unnamed Layer* 75) [Scale]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (1, 256, 256)
+output shape: (1, 256, 256)
+
+--- Layer76 = (Unnamed Layer* 76) [Scale]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (1, 256, 256)
+output shape: (1, 256, 256)
+
+--- Layer77 = (Unnamed Layer* 77) [Scale]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (1, 256, 256)
+output shape: (1, 256, 256)
+
+--- Layer78 = (Unnamed Layer* 78) [Scale]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (1, 256, 256)
+output shape: (1, 256, 256)
+
+--- Layer79 = (Unnamed Layer* 79) [Scale]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (1, 256, 256)
+output shape: (1, 256, 256)
+
+--- Layer80 = (Unnamed Layer* 80) [Scale]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (1, 256, 256)
+output shape: (1, 256, 256)
+
+--- Layer81 = (Unnamed Layer* 81) [ElementWise]
+input & output tensor type: kFLOAT      kFLOAT
+input shape[0]: (1, 256, 256)   input shape[1]: (1, 256, 256)
+output shape: (1, 256, 256)
+
+Building engine, please wait for a while...
+Build engine successfully!
