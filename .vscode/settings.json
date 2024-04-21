@@ -82,19 +82,19 @@
     },
     "cmake.debugConfig": {
 
-        "args": [
-            "-s",
-            "../../datas/models/ead_hazelnut_ep300.wts",
-            "../../datas/models/ead_hazelnut_ep300.engine",
-            "l"  // gd=1,gw=1
-        ]
-
-
         // "args": [
-        //     "-d",
+        //     "-s",
+        //     "../../datas/models/ead_hazelnut_ep300.wts",
         //     "../../datas/models/ead_hazelnut_ep300.engine",
-        //     "../../datas/images/hazelnut/test/hole/"
+        //     "l"  // gd=1,gw=1
         // ]
+
+
+        "args": [
+            "-d",
+            "../../datas/models/ead_hazelnut_ep300.engine",
+            "../../datas/images/hazelnut/test/hole/"
+        ]
 
 
     }

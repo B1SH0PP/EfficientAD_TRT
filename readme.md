@@ -1,3 +1,22 @@
+# v240421-1615
+
+* 模型文件提取码:
+
+  链接：https://pan.baidu.com/s/1Tt4gXlIADZosZGCgX2vd6g?pwd=66eo 
+  提取码：66eo
+
+  下载`models.zip`文件后, 将模型文件放入`models`文件夹下:
+
+  ```
+  datas
+  |-- images
+  |-- models
+  ```
+
+  
+
+* 删除了一些`yolov5`修改而来中冗余的代码;
+
 # v240418-1615
 
 * 基于tensorrtx下的yolov5的修改而来;

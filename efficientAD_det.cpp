@@ -18,34 +18,11 @@ const static int kInputSize = 3 * 256 * 256;
 const static int kOutputSize = 1 * 256 * 256;
 
 bool parse_args(int argc, char** argv, std::string& wts, std::string& engine, float& gd, float& gw, std::string& img_dir) {
-  if (argc < 4) return false;
-  if (std::string(argv[1]) == "-s" && (argc == 5 || argc == 7)) {
+  if (argc != 4) return false;
+  if (std::string(argv[1]) == "-s") {
     wts = std::string(argv[2]);
     engine = std::string(argv[3]);
-    auto net = std::string(argv[4]);
-    if (net[0] == 'n') {
-      gd = 0.33;
-      gw = 0.25;
-    } else if (net[0] == 's') {
-      gd = 0.33;
-      gw = 0.50;
-    } else if (net[0] == 'm') {
-      gd = 0.67;
-      gw = 0.75;
-    } else if (net[0] == 'l') {
-      gd = 1.0;
-      gw = 1.0;
-    } else if (net[0] == 'x') {
-      gd = 1.33;
-      gw = 1.25;
-    } else if (net[0] == 'c' && argc == 7) {
-      gd = atof(argv[5]);
-      gw = atof(argv[6]);
-    } else {
-      return false;
-    }
-
-  } else if (std::string(argv[1]) == "-d" && argc == 4) {
+  } else if (std::string(argv[1]) == "-d") {
     engine = std::string(argv[2]);
     img_dir = std::string(argv[3]);
   } else {
@@ -149,8 +126,8 @@ int main(int argc, char** argv) {
 
   if (!parse_args(argc, argv, wts_name, engine_name, gd, gw, img_dir)) {
     std::cerr << "arguments not right!" << std::endl;
-    std::cerr << "./yolov5_det -s [.wts] [.engine] [n/s/m/l/x/n6/s6/m6/l6/x6 or c/c6 gd gw]  // serialize model to plan file" << std::endl;
-    std::cerr << "./yolov5_det -d [.engine] ../images  // deserialize plan file and run inference" << std::endl;
+    std::cerr << "./efficientad_det -s [.wts] [.engine]  // serialize model to plan file" << std::endl;
+    std::cerr << "./efficientad_det -d [.engine] [../../datas/images/...]  // deserialize plan file and run inference" << std::endl;
     return -1;
   }
 

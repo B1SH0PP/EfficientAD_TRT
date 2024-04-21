@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.12)
-project(yolov5)
+project(EfficientAD-M)
 
 add_definitions(-w)  # 关闭警告信息输出
 # add_definitions(-std=c++11)  # 与下面的set冲突了,且该做法过时了
